@@ -1,7 +1,6 @@
 var React = require('react');
 
 var GifList = React.createClass({
-
   render: function() {
     var posts = this.props.posts.map(function(post, i) {
       return (

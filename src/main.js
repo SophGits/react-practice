@@ -1,8 +1,16 @@
 var React = require('react'),
     ReactDOM = require('react-dom'),
-    Foobar = require('./foobar');
+    GifList = require('./giflist'),
+    Reddit = require('./reddit');
 
-ReactDOM.render(
-  <Foobar />,
-  document.getElementById('init')
-);
+
+Reddit.getPosts()
+  .then(function(posts) {
+      ReactDOM.render(
+        <GifList posts={posts} />,
+        document.getElementById('init')
+      );
+  })
+  .catch(function(err) {
+    console.log(err);
+  })
