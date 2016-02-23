@@ -11,7 +11,6 @@ describe('foobar', function() {
     );
 
     var node = ReactDOM.findDOMNode(helloworld);
-
     expect(node.textContent).toEqual('Hello, world');
   })
 })
